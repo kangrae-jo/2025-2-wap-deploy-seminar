@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: 2025-2-wap-deploy-seminar
+
+  config:
+    import: optional:file:.env[.yml]
+
+  datasource:
+    url: jdbc:mysql://${DB_HOST}:${DB_PORT}/${DB_NAME}?createDatabaseIfNotExist=true
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+  #    properties:
+  #      hibernate:
+  #        show_sql: true
+  #        format_sql: true
+
+
+
+logging:
+  level:
+    org.springframework.security: DEBUG
